@@ -1,94 +1,60 @@
 # El Faro de Prueba
 
-Simulador estático de un medio digital. La portada lista seis notas inventadas. Cada una tiene título, autor, categoría y botones para compartir (X, Facebook, WhatsApp y copiar enlace). El contenedor de Google Tag Manager `GTM-PMRR2D75` está en todas las páginas.
+Simulador estático de un medio digital con nueve notas inventadas, separadas en tres ediciones según lo difícil que es extraer sus datos. Cada nota tiene título, autor, categoría y botones para compartir (X, Facebook, WhatsApp y copiar enlace). El contenedor de Google Tag Manager `GTM-PMRR2D75` está en todas las páginas.
 
-Las estrategias de extracción no aparecen rotuladas en el sitio.
+- Portada: https://leonelostrower.github.io/la-silla-test/
+- Fácil: https://leonelostrower.github.io/la-silla-test/easy/
+- Medio: https://leonelostrower.github.io/la-silla-test/medium/
+- Difícil: https://leonelostrower.github.io/la-silla-test/hard/
 
-## Mapa de extracción
+Cada edición tiene su portada con tres tarjetas y una ficha por nota en la misma carpeta. Las tarjetas usan el mismo markup que su ficha.
 
-| Nota | Página | Cómo leerla |
-| --- | --- | --- |
-| Puerto Claro anuncia 42 kilómetros de ciclovías para 2027 | [noticias/ciclovias-puerto-claro.html](noticias/ciclovias-puerto-claro.html) | Metadata en `dataLayer` |
-| Cafetal Alma cierra una ronda de 8 millones para tostar en origen | [noticias/ronda-cafe-altura.html](noticias/ronda-cafe-altura.html) | Metadata en `__NEXT_DATA__` y JSON-LD |
-| La sub-20 vence a Andivia y sella el cupo al hexagonal | [noticias/sub20-clasifica.html](noticias/sub20-clasifica.html) | DOM con clases claras |
-| El festival Cine de Barrio abre su convocatoria de cortos | [noticias/festival-cine-barrio.html](noticias/festival-cine-barrio.html) | DOM con otro vocabulario de clases claras |
-| Los manglares de Bahía Mansa retienen más carbono de lo estimado | [noticias/manglares-carbono.html](noticias/manglares-carbono.html) | DOM con clases opacas |
-| El metro de Valdenorte ensaya un apagón controlado el domingo | [noticias/apagon-metro.html](noticias/apagon-metro.html) | DOM con clases genéricas |
+## Fácil: metadata (`/easy/`)
 
-La portada repite el mismo patrón en cada tarjeta. `dataLayer` y `__NEXT_DATA__` de la portada incluyen solo las dos primeras notas.
+Los datos están en la página como datos estructurados. El DOM usa las clases `.piece__title`, `.piece__author` y `.piece__cat`, pero no hace falta leerlo.
 
-### Metadata
+| Nota | Fuente |
+| --- | --- |
+| [Ciclovías de Puerto Claro](easy/ciclovias-puerto-claro.html) | `dataLayer`, con el push antes del snippet de GTM |
+| [Cafetal Alma](easy/ronda-cafe-altura.html) | `<script id="__NEXT_DATA__">` en `props.pageProps.article`, y JSON-LD `NewsArticle` en la ficha |
+| [Biblioteca nocturna](easy/biblioteca-nocturna.html) | `window.__INITIAL_STATE__.article` |
 
-La nota de ciclovías empuja esto a `dataLayer` antes del snippet de GTM, en la portada y en su ficha:
+Las tres fuentes usan el mismo objeto:
 
 ```js
 {
-  event: "article_view",
-  article: {
-    title: "Puerto Claro anuncia 42 kilómetros de ciclovías para 2027",
-    author: "Marina Soler",
-    category: "Ciudad",
-    share: { x, facebook, whatsapp, copy }
-  }
+  title: "...",
+  author: "...",
+  category: "...",
+  url: "https://leonelostrower.github.io/la-silla-test/easy/....html",
+  share: { x, facebook, whatsapp, copy }
 }
 ```
 
-También publica `og:title`, `article:author` y `article:section`.
+En `dataLayer` va dentro de `{ event: "article_view", article: {...} }`. Las fichas también publican `og:title`, `og:url`, `article:author` y `article:section`. La portada `/easy/` expone las tres notas: el `dataLayer` y el `__INITIAL_STATE__` en el `head`, y el `__NEXT_DATA__` al final del `body`.
 
-La nota de Cafetal Alma expone el mismo objeto en `props.pageProps.article` dentro de `<script id="__NEXT_DATA__" type="application/json">`. El JSON-LD `NewsArticle` repite el título en `headline`, el autor en `author.name` y la categoría en `articleSection`. Las URLs de compartir están solo en `__NEXT_DATA__`.
+## Medio: clases claras (`/medium/`)
 
-`share.copy` es la ruta desde la raíz del sitio (`noticias/....html`). `share.x`, `share.facebook` y `share.whatsapp` son las URLs de cada red.
+Sin `dataLayer` de artículo, sin `__NEXT_DATA__`, sin `__INITIAL_STATE__`, sin JSON-LD, sin Open Graph y sin `meta` de autor. El título sí figura en `<title>`.
 
-### Clases claras
+| Nota | Título | Autor | Categoría | Compartir |
+| --- | --- | --- | --- | --- |
+| [Sub-20](medium/sub20-clasifica.html) | `.article-title` | `.article-author` | `.article-category` | `.share-button.share-x`, `.share-facebook`, `.share-whatsapp`, `.share-copy` |
+| [Cine de Barrio](medium/festival-cine-barrio.html) | `.news-headline` | `.news-byline` | `.news-section` | `.social-share__x`, `__facebook`, `__whatsapp`, `__copy` |
+| [Mercado nocturno](medium/mercado-nocturno.html) | `.post-title` | `.post-author` | `.post-category` | `.share-link--x`, `--facebook`, `--whatsapp`, `--copy` |
 
-Sub-20:
+## Difícil: clases sin significado (`/hard/`)
 
-- `.article-title`
-- `.article-author`
-- `.article-category`
-- `.share-button.share-x`
-- `.share-button.share-facebook`
-- `.share-button.share-whatsapp`
-- `.share-button.share-copy`
+Las mismas restricciones que en Medio, pero los nombres de clase no dicen qué contiene cada elemento.
 
-Cine de Barrio:
+| Nota | Título | Autor | Categoría | Compartir |
+| --- | --- | --- | --- | --- |
+| [Manglares](hard/manglares-carbono.html) | `.ttl_91ab` | `.meta_04e` | `.lbl_c21` | `.ico_a` (X), `.ico_b` (Facebook), `.ico_c` (WhatsApp), `.ico_d` (copiar) |
+| [Metro de Valdenorte](hard/apagon-metro.html) | `.t` | `.n` | `.k` | `.i` en los cuatro; se distinguen por el texto y el `href` |
+| [Prótesis recicladas](hard/protesis-recicladas.html) | `.sc-dlfnbm.kFBaZQ` | `.sc-hKgILt.gTLZXx` | `.sc-gsTCUz.bhFNxE` | `.sc-jSgupP` con `.cRtYkL` (X), `.fGhVwQ` (Facebook), `.bNmPzT` (WhatsApp), `.dKsXoU` (copiar) |
 
-- `.news-headline`
-- `.news-byline`
-- `.news-section`
-- `.social-share__x`
-- `.social-share__facebook`
-- `.social-share__whatsapp`
-- `.social-share__copy`
-
-Estas cuatro notas no tienen `dataLayer` de artículo, `__NEXT_DATA__`, JSON-LD, Open Graph ni `meta` de autor. El título sí figura en `<title>`.
-
-### Clases opacas y genéricas
-
-Manglares:
-
-- `.ttl_91ab` título
-- `.meta_04e` autor
-- `.lbl_c21` categoría
-- `.ico_a` X
-- `.ico_b` Facebook
-- `.ico_c` WhatsApp
-- `.ico_d` copiar enlace
-
-Metro de Valdenorte:
-
-- `.t` título
-- `.n` autor
-- `.k` categoría
-- `.i` los cuatro botones de compartir (se distinguen por el texto y por el `href`)
+La nota de prótesis imita el markup que genera styled-components.
 
 ## GitHub Pages
 
-El sitio no necesita build. Las rutas son relativas para funcionar en un project site (`https://USUARIO.github.io/la-silla-test/`).
-
-1. Crea un repositorio y sube esta carpeta a la rama `main`.
-2. En el repositorio, abre Settings, Pages.
-3. En Build and deployment, elige Deploy from a branch.
-4. Publica la rama `main` y la carpeta `/ (root)`.
-
-Hay un archivo `.nojekyll` para que Pages sirva el sitio sin procesarlo con Jekyll.
+El sitio no necesita build. Pages publica la rama `main` desde la carpeta raíz, y cada push a `main` actualiza el deploy. Hay un archivo `.nojekyll` para que Pages sirva los archivos sin procesarlos con Jekyll.

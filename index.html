@@ -8,23 +8,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,650&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/site.css">
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "article_view",
-      article: {
-        title: "Puerto Claro anuncia 42 kilómetros de ciclovías para 2027",
-        author: "Marina Soler",
-        category: "Ciudad",
-        share: {
-          x: "https://twitter.com/intent/tweet?text=Puerto%20Claro%20anuncia%2042%20kil%C3%B3metros%20de%20ciclov%C3%ADas%20para%202027&url=noticias/ciclovias-puerto-claro.html",
-          facebook: "https://www.facebook.com/sharer/sharer.php?u=noticias/ciclovias-puerto-claro.html",
-          whatsapp: "https://wa.me/?text=Puerto%20Claro%20anuncia%2042%20kil%C3%B3metros%20de%20ciclov%C3%ADas%20para%202027%20noticias/ciclovias-puerto-claro.html",
-          copy: "noticias/ciclovias-puerto-claro.html"
-        }
-      }
-    });
-  </script>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -44,105 +27,29 @@
       <h1 class="masthead__name"><a href="index.html">El Faro de Prueba</a></h1>
       <p class="masthead__tag">Simulador de medio digital</p>
       <hr class="masthead__rule">
-      <nav class="nav" aria-label="Secciones">
-        <a href="noticias/ciclovias-puerto-claro.html">Ciudad</a>
-        <a href="noticias/ronda-cafe-altura.html">Economía</a>
-        <a href="noticias/sub20-clasifica.html">Deportes</a>
-        <a href="noticias/festival-cine-barrio.html">Cultura</a>
-        <a href="noticias/manglares-carbono.html">Ciencia</a>
+      <nav class="nav" aria-label="Ediciones">
+        <a href="easy/">Fácil</a>
+        <a href="medium/">Medio</a>
+        <a href="hard/">Difícil</a>
       </nav>
     </header>
 
     <main>
-      <ul class="grid">
-        <li class="slot">
-          <article class="piece">
-            <p class="piece__cat">Ciudad</p>
-            <h2 class="piece__title"><a href="noticias/ciclovias-puerto-claro.html">Puerto Claro anuncia 42 kilómetros de ciclovías para 2027</a></h2>
-            <p class="piece__author">Marina Soler</p>
-            <p>El concejo aprobó el trazado que une el puerto con los cerros y reserva carriles exclusivos en tres avenidas.</p>
-            <div class="piece__share">
-              <a href="https://twitter.com/intent/tweet?text=Puerto%20Claro%20anuncia%2042%20kil%C3%B3metros%20de%20ciclov%C3%ADas%20para%202027&url=noticias/ciclovias-puerto-claro.html" target="_blank" rel="noopener noreferrer">X</a>
-              <a href="https://www.facebook.com/sharer/sharer.php?u=noticias/ciclovias-puerto-claro.html" target="_blank" rel="noopener noreferrer">Facebook</a>
-              <a href="https://wa.me/?text=Puerto%20Claro%20anuncia%2042%20kil%C3%B3metros%20de%20ciclov%C3%ADas%20para%202027%20noticias/ciclovias-puerto-claro.html" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-              <a href="noticias/ciclovias-puerto-claro.html">Copiar enlace</a>
-            </div>
-          </article>
+      <ul class="grid levels">
+        <li class="slot level">
+          <span class="piece__cat">/easy</span>
+          <h2 class="level__name"><a href="easy/">Fácil</a></h2>
+          <p>Tres notas con la información también en datos estructurados de la página.</p>
         </li>
-
-        <li class="slot">
-          <article class="piece">
-            <p class="piece__cat">Economía</p>
-            <h2 class="piece__title"><a href="noticias/ronda-cafe-altura.html">Cafetal Alma cierra una ronda de 8 millones para tostar en origen</a></h2>
-            <p class="piece__author">Iván Restrepo</p>
-            <p>La tostadora de las veredas de Alto Limo invertirá en un beneficio húmedo y en una flota propia de exportación.</p>
-            <div class="piece__share">
-              <a href="https://twitter.com/intent/tweet?text=Cafetal%20Alma%20cierra%20una%20ronda%20de%208%20millones%20para%20tostar%20en%20origen&url=noticias/ronda-cafe-altura.html" target="_blank" rel="noopener noreferrer">X</a>
-              <a href="https://www.facebook.com/sharer/sharer.php?u=noticias/ronda-cafe-altura.html" target="_blank" rel="noopener noreferrer">Facebook</a>
-              <a href="https://wa.me/?text=Cafetal%20Alma%20cierra%20una%20ronda%20de%208%20millones%20para%20tostar%20en%20origen%20noticias/ronda-cafe-altura.html" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-              <a href="noticias/ronda-cafe-altura.html">Copiar enlace</a>
-            </div>
-          </article>
+        <li class="slot level">
+          <span class="piece__cat">/medium</span>
+          <h2 class="level__name"><a href="medium/">Medio</a></h2>
+          <p>Tres notas que solo se leen desde el HTML, con nombres de clases descriptivos.</p>
         </li>
-
-        <li class="slot">
-          <article class="article-card">
-            <a class="article-category" href="noticias/sub20-clasifica.html">Deportes</a>
-            <h2 class="article-title"><a href="noticias/sub20-clasifica.html">La sub-20 vence a Andivia y sella el cupo al hexagonal</a></h2>
-            <p class="article-author">Leticia Romero</p>
-            <p>Un gol de Valdés a los 81 minutos deja a la selección en la fase final del sur.</p>
-            <div class="share-buttons">
-              <a class="share-button share-x" href="https://twitter.com/intent/tweet?text=La%20sub-20%20vence%20a%20Andivia%20y%20sella%20el%20cupo%20al%20hexagonal&url=noticias/sub20-clasifica.html" target="_blank" rel="noopener noreferrer">X</a>
-              <a class="share-button share-facebook" href="https://www.facebook.com/sharer/sharer.php?u=noticias/sub20-clasifica.html" target="_blank" rel="noopener noreferrer">Facebook</a>
-              <a class="share-button share-whatsapp" href="https://wa.me/?text=La%20sub-20%20vence%20a%20Andivia%20y%20sella%20el%20cupo%20al%20hexagonal%20noticias/sub20-clasifica.html" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-              <a class="share-button share-copy" href="noticias/sub20-clasifica.html">Copiar enlace</a>
-            </div>
-          </article>
-        </li>
-
-        <li class="slot">
-          <article class="news-item">
-            <span class="news-section">Cultura</span>
-            <h2 class="news-headline"><a href="noticias/festival-cine-barrio.html">El festival Cine de Barrio abre su convocatoria de cortos</a></h2>
-            <span class="news-byline">Tomás Aguilar</span>
-            <p>Hasta el 18 de noviembre se reciben obras de menos de 15 minutos rodadas en los distritos del oeste.</p>
-            <div class="social-share">
-              <a class="social-share__x" href="https://twitter.com/intent/tweet?text=El%20festival%20Cine%20de%20Barrio%20abre%20su%20convocatoria%20de%20cortos&url=noticias/festival-cine-barrio.html" target="_blank" rel="noopener noreferrer">X</a>
-              <a class="social-share__facebook" href="https://www.facebook.com/sharer/sharer.php?u=noticias/festival-cine-barrio.html" target="_blank" rel="noopener noreferrer">Facebook</a>
-              <a class="social-share__whatsapp" href="https://wa.me/?text=El%20festival%20Cine%20de%20Barrio%20abre%20su%20convocatoria%20de%20cortos%20noticias/festival-cine-barrio.html" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-              <a class="social-share__copy" href="noticias/festival-cine-barrio.html">Copiar enlace</a>
-            </div>
-          </article>
-        </li>
-
-        <li class="slot">
-          <article>
-            <p class="lbl_c21">Ciencia</p>
-            <h2 class="ttl_91ab"><a href="noticias/manglares-carbono.html">Los manglares de Bahía Mansa retienen más carbono de lo estimado</a></h2>
-            <p class="meta_04e">Nuria Beltrán</p>
-            <p>Un muestreo de tres años midió el suelo bajo las raíces y corrigió el inventario regional.</p>
-            <div class="row_77">
-              <a class="ico_a" href="https://twitter.com/intent/tweet?text=Los%20manglares%20de%20Bah%C3%ADa%20Mansa%20retienen%20m%C3%A1s%20carbono%20de%20lo%20estimado&url=noticias/manglares-carbono.html" target="_blank" rel="noopener noreferrer">X</a>
-              <a class="ico_b" href="https://www.facebook.com/sharer/sharer.php?u=noticias/manglares-carbono.html" target="_blank" rel="noopener noreferrer">Facebook</a>
-              <a class="ico_c" href="https://wa.me/?text=Los%20manglares%20de%20Bah%C3%ADa%20Mansa%20retienen%20m%C3%A1s%20carbono%20de%20lo%20estimado%20noticias/manglares-carbono.html" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-              <a class="ico_d" href="noticias/manglares-carbono.html">Copiar enlace</a>
-            </div>
-          </article>
-        </li>
-
-        <li class="slot">
-          <article>
-            <p class="k">Ciudad</p>
-            <h2 class="t"><a href="noticias/apagon-metro.html">El metro de Valdenorte ensaya un apagón controlado el domingo</a></h2>
-            <p class="n">Hugo Paredes</p>
-            <p>Entre las 8 y las 11 de la mañana circularán buses de reemplazo en toda la línea 2.</p>
-            <div class="b">
-              <a class="i" href="https://twitter.com/intent/tweet?text=El%20metro%20de%20Valdenorte%20ensaya%20un%20apag%C3%B3n%20controlado%20el%20domingo&url=noticias/apagon-metro.html" target="_blank" rel="noopener noreferrer">X</a>
-              <a class="i" href="https://www.facebook.com/sharer/sharer.php?u=noticias/apagon-metro.html" target="_blank" rel="noopener noreferrer">Facebook</a>
-              <a class="i" href="https://wa.me/?text=El%20metro%20de%20Valdenorte%20ensaya%20un%20apag%C3%B3n%20controlado%20el%20domingo%20noticias/apagon-metro.html" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-              <a class="i" href="noticias/apagon-metro.html">Copiar enlace</a>
-            </div>
-          </article>
+        <li class="slot level">
+          <span class="piece__cat">/hard</span>
+          <h2 class="level__name"><a href="hard/">Difícil</a></h2>
+          <p>Tres notas que solo se leen desde el HTML, con nombres de clases sin significado.</p>
         </li>
       </ul>
     </main>
@@ -151,28 +58,6 @@
       <p>El Faro de Prueba es un sitio de demostración. Las notas, los lugares y las personas son inventados.</p>
     </footer>
   </div>
-  <script id="__NEXT_DATA__" type="application/json">
-    {
-      "props": {
-        "pageProps": {
-          "article": {
-            "title": "Cafetal Alma cierra una ronda de 8 millones para tostar en origen",
-            "author": "Iván Restrepo",
-            "category": "Economía",
-            "share": {
-              "x": "https://twitter.com/intent/tweet?text=Cafetal%20Alma%20cierra%20una%20ronda%20de%208%20millones%20para%20tostar%20en%20origen&url=noticias/ronda-cafe-altura.html",
-              "facebook": "https://www.facebook.com/sharer/sharer.php?u=noticias/ronda-cafe-altura.html",
-              "whatsapp": "https://wa.me/?text=Cafetal%20Alma%20cierra%20una%20ronda%20de%208%20millones%20para%20tostar%20en%20origen%20noticias/ronda-cafe-altura.html",
-              "copy": "noticias/ronda-cafe-altura.html"
-            }
-          }
-        }
-      },
-      "page": "/",
-      "query": {},
-      "buildId": "faro-prueba"
-    }
-  </script>
   <script src="js/share.js"></script>
 </body>
 </html>
