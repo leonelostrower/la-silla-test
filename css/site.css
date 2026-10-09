@@ -329,31 +329,21 @@ a {
     grid-template-columns: 1fr 1fr;
   }
 
-  .grid .slot:nth-child(-n + 2) {
+  .grid .slot:first-child {
     grid-column: 1 / -1;
   }
 
-  .grid .slot:nth-child(-n + 2) .piece__title,
-  .grid .slot:nth-child(-n + 2) .article-title,
-  .grid .slot:nth-child(-n + 2) .news-headline,
-  .grid .slot:nth-child(-n + 2) .post-title,
-  .grid .slot:nth-child(-n + 2) .ttl_91ab,
-  .grid .slot:nth-child(-n + 2) .t,
-  .grid .slot:nth-child(-n + 2) .sc-dlfnbm {
+  .grid .slot:first-child .piece__title,
+  .grid .slot:first-child .article-title,
+  .grid .slot:first-child .ttl_91ab {
     font-size: 3rem;
-  }
-
-  .grid .slot:nth-child(-n + 2) article > p:not([class]),
-  .grid .slot:nth-child(-n + 2) article > p.sc-bqiRlB {
-    font-size: 1.28rem;
-    line-height: 1.45;
   }
 
   .levels {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .levels .slot:nth-child(-n + 2) {
+  .levels .slot:first-child {
     grid-column: auto;
   }
 }
