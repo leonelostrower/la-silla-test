@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pago · Edición fácil — Tienda El Faro de Prueba</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,650&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/site.css">
+  <link rel="stylesheet" href="../../css/shop.css">
+  <script>
+    window.__INITIAL_STATE__ = {
+      "page": "payment"
+    };
+  </script>
+  <script src="../../js/shop.js"></script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PMRR2D75');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMRR2D75"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="wrap">
+    <header class="masthead">
+      <p class="masthead__date">Miércoles 7 de octubre de 2026 · Edición de prueba</p>
+      <p class="masthead__name"><a href="../../index.html">El Faro de Prueba</a></p>
+      <p class="masthead__tag">Tienda · Edición fácil</p>
+      <hr class="masthead__rule">
+      <nav class="nav" aria-label="Ediciones de la tienda">
+        <a href="../easy/" aria-current="page">Fácil</a>
+        <a href="../medium/">Medio</a>
+        <a href="../hard/">Difícil</a>
+        <a href="carrito.html">Carrito (<span class="cart-link__count">0</span>)</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1 class="page-title">Pago</h1>
+      <ol class="steps"><li>Carrito</li><li>Envío</li><li aria-current="step">Pago</li><li>Confirmación</li></ol>
+      <div class="checkout">
+        <section>
+          <form class="checkout__form--payment" action="gracias.html" method="get" novalidate>
+            <fieldset>
+              <legend>Método de pago</legend>
+              <label class="option"><input type="radio" name="pago" value="tarjeta" checked> Tarjeta de crédito o débito</label>
+              <label class="option"><input type="radio" name="pago" value="transferencia"> Transferencia bancaria</label>
+              <label class="option"><input type="radio" name="pago" value="efectivo"> Efectivo al recibir</label>
+            </fieldset>
+            <fieldset>
+              <legend>Datos de la tarjeta</legend>
+              <label class="field">Número de tarjeta<input type="text" name="tarjeta_numero" autocomplete="cc-number"></label>
+              <label class="field">Nombre en la tarjeta<input type="text" name="tarjeta_nombre" autocomplete="cc-name"></label>
+              <label class="field">Vencimiento (MM/AA)<input type="text" name="tarjeta_vencimiento" autocomplete="cc-exp"></label>
+              <label class="field">Código de seguridad<input type="text" name="tarjeta_codigo" autocomplete="cc-csc"></label>
+            </fieldset>
+            <button type="submit" class="cart__next">Confirmar pago</button>
+          </form>
+          <p class="note">Es una compra de prueba: podés dejar los campos vacíos y no se cobra nada.</p>
+        </section>
+        <aside class="panel">
+          <h2>Tu pedido</h2>
+          <ul class="cart__list"></ul>
+          <p class="cart__empty note" hidden>Tu carrito está vacío.</p>
+          <dl class="totals">
+            <dt>Subtotal</dt><dd class="totals__subtotal">$ 0</dd>
+            <dt>Envío</dt><dd class="totals__shipping">$ 0</dd>
+            <dt>Total</dt><dd class="totals__total">$ 0</dd>
+          </dl>
+          <p class="note"><a href="carrito.html">Editar carrito</a></p>
+          <h2>Enviamos a</h2>
+          <address class="order__address address-block"></address>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="colophon">
+      <p>El Faro de Prueba es un sitio de demostración. Los productos, los precios y las compras son inventados: no se cobra nada.</p>
+    </footer>
+  </div>
+</body>
+</html>

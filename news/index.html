@@ -3,12 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>El Faro de Prueba</title>
+  <title>Noticias — El Faro de Prueba</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,650&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css">
-  <link rel="stylesheet" href="css/shop.css">
+  <link rel="stylesheet" href="../css/site.css">
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -25,59 +24,40 @@
   <div class="wrap">
     <header class="masthead">
       <p class="masthead__date">Miércoles 7 de octubre de 2026 · Edición de prueba</p>
-      <h1 class="masthead__name"><a href="index.html">El Faro de Prueba</a></h1>
-      <p class="masthead__tag">Simulador de medio digital y tienda</p>
+      <h1 class="masthead__name"><a href="../index.html">El Faro de Prueba</a></h1>
+      <p class="masthead__tag">Noticias</p>
       <hr class="masthead__rule">
-      <nav class="nav" aria-label="Secciones">
-        <a href="news/">Noticias</a>
-        <a href="tienda/">Tienda</a>
+      <nav class="nav" aria-label="Ediciones">
+        <a href="easy/">Fácil</a>
+        <a href="medium/">Medio</a>
+        <a href="hard/">Difícil</a>
       </nav>
     </header>
 
     <main>
-      <h2 class="page-title"><a href="news/">Noticias</a></h2>
       <ul class="grid levels">
         <li class="slot level">
           <span class="piece__cat">/news/easy</span>
-          <h3 class="level__name"><a href="news/easy/">Fácil</a></h3>
+          <h2 class="level__name"><a href="easy/">Fácil</a></h2>
           <p>Tres notas con la información también en datos estructurados de la página.</p>
         </li>
         <li class="slot level">
           <span class="piece__cat">/news/medium</span>
-          <h3 class="level__name"><a href="news/medium/">Medio</a></h3>
+          <h2 class="level__name"><a href="medium/">Medio</a></h2>
           <p>Tres notas que solo se leen desde el HTML, con nombres de clases descriptivos.</p>
         </li>
         <li class="slot level">
           <span class="piece__cat">/news/hard</span>
-          <h3 class="level__name"><a href="news/hard/">Difícil</a></h3>
+          <h2 class="level__name"><a href="hard/">Difícil</a></h2>
           <p>Tres notas que solo se leen desde el HTML, con nombres de clases sin significado.</p>
-        </li>
-      </ul>
-
-      <h2 class="page-title"><a href="tienda/">Tienda</a></h2>
-      <ul class="grid levels">
-        <li class="slot level">
-          <span class="piece__cat">/tienda/easy</span>
-          <h3 class="level__name"><a href="tienda/easy/">Fácil</a></h3>
-          <p>Catálogo, ficha de producto y checkout con los datos también en metadata de la página.</p>
-        </li>
-        <li class="slot level">
-          <span class="piece__cat">/tienda/medium</span>
-          <h3 class="level__name"><a href="tienda/medium/">Medio</a></h3>
-          <p>El mismo flujo de compra, legible solo desde el HTML con clases descriptivas.</p>
-        </li>
-        <li class="slot level">
-          <span class="piece__cat">/tienda/hard</span>
-          <h3 class="level__name"><a href="tienda/hard/">Difícil</a></h3>
-          <p>El mismo flujo de compra, legible solo desde el HTML con clases sin significado.</p>
         </li>
       </ul>
     </main>
 
     <footer class="colophon">
-      <p>El Faro de Prueba es un sitio de demostración. Las notas, los productos, los lugares y las personas son inventados.</p>
+      <p>El Faro de Prueba es un sitio de demostración. Las notas, los lugares y las personas son inventados.</p>
     </footer>
   </div>
-  <script src="js/share.js"></script>
+  <script src="../js/share.js"></script>
 </body>
 </html>

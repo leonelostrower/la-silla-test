@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Datos de envío · Edición media — Tienda El Faro de Prueba</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,650&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/site.css">
+  <link rel="stylesheet" href="../../css/shop.css">
+  <script src="../../js/shop.js"></script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PMRR2D75');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMRR2D75"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="wrap">
+    <header class="masthead">
+      <p class="masthead__date">Miércoles 7 de octubre de 2026 · Edición de prueba</p>
+      <p class="masthead__name"><a href="../../index.html">El Faro de Prueba</a></p>
+      <p class="masthead__tag">Tienda · Edición media</p>
+      <hr class="masthead__rule">
+      <nav class="nav" aria-label="Ediciones de la tienda">
+        <a href="../easy/">Fácil</a>
+        <a href="../medium/" aria-current="page">Medio</a>
+        <a href="../hard/">Difícil</a>
+        <a href="carrito.html">Carrito (<span class="cart-count">0</span>)</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1 class="page-title">Datos de envío</h1>
+      <ol class="steps"><li>Carrito</li><li aria-current="step">Envío</li><li>Pago</li><li>Confirmación</li></ol>
+      <div class="checkout">
+        <section>
+          <form class="shipping-form" action="pago.html" method="get" novalidate>
+            <fieldset>
+              <legend>Contacto</legend>
+              <label class="field">Nombre y apellido<input type="text" name="full_name" autocomplete="name"></label>
+              <label class="field">Correo electrónico<input type="email" name="email" autocomplete="email"></label>
+              <label class="field">Teléfono<input type="tel" name="phone" autocomplete="tel"></label>
+            </fieldset>
+            <fieldset>
+              <legend>Dirección</legend>
+              <label class="field">Calle y número<input type="text" name="street_address" autocomplete="street-address"></label>
+              <label class="field">Ciudad<input type="text" name="city" autocomplete="address-level2"></label>
+              <label class="field">Código postal<input type="text" name="postal_code" autocomplete="postal-code"></label>
+            </fieldset>
+            <fieldset>
+              <legend>Método de envío</legend>
+              <label class="option"><input type="radio" name="shipping_method" value="estandar" checked> Envío estándar (3 a 5 días hábiles) · $ 3.500</label>
+              <label class="option"><input type="radio" name="shipping_method" value="express"> Envío express (24 horas) · $ 7.900</label>
+              <label class="option"><input type="radio" name="shipping_method" value="retiro"> Retiro en el local · Sin cargo</label>
+            </fieldset>
+            <button type="submit" class="continue-to-payment">Continuar al pago</button>
+          </form>
+        </section>
+        <aside class="panel">
+          <h2>Tu pedido</h2>
+          <ul class="cart-items"></ul>
+          <p class="cart-empty note" hidden>Tu carrito está vacío.</p>
+          <dl class="totals">
+            <dt>Subtotal</dt><dd class="cart-subtotal">$ 0</dd>
+            <dt>Envío</dt><dd class="cart-shipping">$ 0</dd>
+            <dt>Total</dt><dd class="cart-total">$ 0</dd>
+          </dl>
+          <p class="note"><a href="carrito.html">Editar carrito</a></p>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="colophon">
+      <p>El Faro de Prueba es un sitio de demostración. Los productos, los precios y las compras son inventados: no se cobra nada.</p>
+    </footer>
+  </div>
+</body>
+</html>
