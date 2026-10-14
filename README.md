@@ -58,12 +58,15 @@ La nota de prótesis imita el markup que genera styled-components.
 
 # Tienda (`/tienda/`)
 
-Cada edición tiene el mismo flujo de compra, con doce productos en cada categoría (Aire libre, Cocina, Hogar, Papelería y Almacén), en pesos argentinos (`ARS`):
+Cada edición tiene el mismo flujo de compra, con doce productos en cada categoría (Aire libre, Cocina, Hogar, Papelería y Almacén), en pesos argentinos (`ARS`).
+
+El índice de la edición lista las categorías. El prefijo de la URL cambia según la categoría: `category` para Aire libre y Cocina, `search` para Hogar y Papelería, y `collection` para Almacén. Cada producto tiene su propia ficha, con el SKU en la ruta: `/tienda/hard/aire-libre/sku-FAR-101/`.
 
 | Página | Archivo |
 | --- | --- |
-| Listado de productos (PLP) | `index.html` |
-| Ficha de producto (PDP) | `producto.html`; todos los productos del listado llevan a esta misma ficha |
+| Listado de categorías | `index.html` |
+| Listado de una categoría | `{category\|search\|collection}/{slug}/index.html` |
+| Ficha de producto (PDP) | `{slug}/sku-{SKU}/index.html` |
 | Carrito | `carrito.html` |
 | Datos de envío | `envio.html` |
 | Pago | `pago.html` |
@@ -77,17 +80,18 @@ La tienda no hace ningún push al `dataLayer`: ahí solo aparecen los eventos pr
 
 | Página | Fuente |
 | --- | --- |
-| PLP | JSON-LD `ItemList` con un `Product` y su `Offer` por ítem, y `window.__INITIAL_STATE__.products` |
+| Categorías | JSON-LD `ItemList` y `window.__INITIAL_STATE__.categories`, con `name`, `slug`, `prefix` y `url` |
+| PLP de una categoría | JSON-LD `ItemList` con un `Product` y su `Offer` por ítem, y `window.__INITIAL_STATE__.products` |
 | PDP | JSON-LD `Product`, `og:*` y `product:price:*`, `window.__INITIAL_STATE__.product` y `<script id="__NEXT_DATA__">` en `props.pageProps.product` |
 | Carrito, envío y pago | `window.__INITIAL_STATE__.cart` con `items`, `itemCount` y `subtotal`; en envío y pago también `checkout` con método, costo de envío y total |
 | Confirmación | `window.__INITIAL_STATE__.order` con `id`, `items`, `subtotal`, `shippingCost`, `total`, `shipping` y `payment` |
 
-`__INITIAL_STATE__` también tiene `page` (`plp`, `pdp`, `cart`, `shipping`, `payment`, `thank_you`). `js/shop.js` carga en el `head`, antes que GTM, así que el carrito y el pedido ya están cuando GTM arranca, y se actualizan al agregar o cambiar cantidades.
+`__INITIAL_STATE__` también tiene `page` (`categories`, `plp`, `pdp`, `cart`, `shipping`, `payment`, `thank_you`). `js/shop.js` carga en el `head`, antes que GTM, así que el carrito y el pedido ya están cuando GTM arranca, y se actualizan al agregar o cambiar cantidades.
 
 Cada producto se describe así:
 
 ```js
-{ sku: "FAR-101", name: "...", category: "...", price: 34500, currency: "ARS", url: "https://leonelostrower.github.io/la-silla-test/tienda/easy/producto.html" }
+{ sku: "FAR-101", name: "...", category: "...", price: 34500, currency: "ARS", url: "https://leonelostrower.github.io/la-silla-test/tienda/easy/aire-libre/sku-FAR-101/" }
 ```
 
 ## Medio: clases claras (`/tienda/medium/`)
