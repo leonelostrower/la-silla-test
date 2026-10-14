@@ -58,7 +58,7 @@ La nota de prótesis imita el markup que genera styled-components.
 
 # Tienda (`/tienda/`)
 
-Cada edición tiene el mismo flujo de compra, con seis productos en pesos argentinos (`ARS`):
+Cada edición tiene el mismo flujo de compra, con doce productos en cada categoría (Aire libre, Cocina, Hogar, Papelería y Almacén), en pesos argentinos (`ARS`):
 
 | Página | Archivo |
 | --- | --- |
